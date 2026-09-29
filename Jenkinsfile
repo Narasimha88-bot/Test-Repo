@@ -13,7 +13,7 @@ pipeline {
         }
         stage('validate stage'){
             steps {
-                mvn clean validate
+                sh 'mvn clean validate'
             }
         }
     }
