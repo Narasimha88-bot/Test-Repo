@@ -21,6 +21,16 @@ pipeline {
                 sh 'docker build -t apache-tomcat:latest .'
             }
         }
+        stage ("rename the docker image"){
+            steps {
+                sh 'docker tag apache-tomcat:latest narasimhanellore/my-second-repo:apache-tomcat'
+            }
+        }
+        stage ("push to the docker hub"){
+            steps {
+                sh 'docker push narasimhanellore/my-second-repo:apache-tomcat'
+            }
+        }
     }
     post {
         success {
