@@ -16,5 +16,10 @@ pipeline {
                 sh 'mvn clean package -DskipTests'
             }
         }
+        stage('docker build'){
+            steps {
+                sh 'docker build -t apache-tomcat:latest .'
+            }
+        }
     }
 }
