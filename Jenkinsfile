@@ -22,4 +22,12 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            echo 'Pipeline completed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed. Kindly check the logs for more details.'
+        }
+    }
 }
