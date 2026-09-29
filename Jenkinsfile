@@ -11,9 +11,9 @@ pipeline {
             }
             
         }
-        stage('validate stage'){
+        stage('package stage'){
             steps {
-                sh 'mvn clean validate'
+                sh 'mvn clean package -DskipTests'
             }
         }
     }
