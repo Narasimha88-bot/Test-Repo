@@ -14,11 +14,11 @@ pipeline {
             steps { sh 'mvn clean package -DskipTests' }
         }
         stage('docker build') {
-            steps { sh 'docker build -t $IMAGE:apache-tomcat1 .' }
+            steps { sh 'docker build -t $IMAGE:apache-tomcat2 .' }
         }
         stage('push to the docker hub') {
             when { branch 'main' }
-            steps { sh 'docker push $IMAGE:apache-tomcat1' }
+            steps { sh 'docker push $IMAGE:apache-tomcat2' }
         }
     }
     post {
