@@ -1,6 +1,6 @@
 FROM tomcat:10.1-jre21-temurin-jammy
 
-# The current directory is
+# Set the current directory is
 
 WORKDIR /usr/local/tomcat
 
